@@ -3,6 +3,12 @@
 // convenience to get you started writing code faster.
 //
 
-export const decodedValue = () => {
-  throw new Error('Remove this statement and implement this function');
+const colorCode = (colorName) => {
+  return COLORS.findIndex(color => color === colorName);
+};
+
+const COLORS = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
+
+export const decodedValue = (colors) => {
+  return Number(`${colorCode(colors[0])}${colorCode(colors[1])}`);
 };
