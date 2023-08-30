@@ -3,6 +3,12 @@
 // convenience to get you started writing code faster.
 //
 
-export const isPangram = () => {
-  throw new Error('Remove this statement and implement this function');
+export const isPangram = (sentence) => {
+  const obj = {};
+  sentence = sentence.toLowerCase();
+  for (let letter of sentence)
+    if (letter.match(/[a-z]/g))
+      obj[letter] = 'okay';
+
+  return Object.keys(obj).length === 26;
 };
