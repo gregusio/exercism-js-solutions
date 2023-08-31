@@ -4,15 +4,23 @@
 //
 
 export class Matrix {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
-  }
+  constructor(matrixInString) {
+    this.rows = matrixInString.split('\n');
+    this.columns = [];
 
-  get rows() {
-    throw new Error('Remove this statement and implement this function');
-  }
+    for (let i = 0; i < this.rows.length; i++) {
+      this.rows[i] = this.rows[i].split(' ');
+      for (let j = 0; j < this.rows[i].length; j++)
+        this.rows[i][j] = Number(this.rows[i][j]);
+    }
 
-  get columns() {
-    throw new Error('Remove this statement and implement this function');
+    let column = [];
+    for (let i = 0; i < this.rows[0].length; i++) {
+      for (let j = 0; j < this.rows.length; j++) {
+        column.push(this.rows[j][i])
+      }
+      this.columns.push(column);
+      column = [];
+    }
   }
 }
